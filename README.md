@@ -2,7 +2,13 @@
 * All data is stored in the data directory.
 * All relevant scripts for data collection is in the root directory
 * All supporting scripts from Cambridge Moodle and testing script from TianYao Ding is in the scripts directory
+
+
 # Cubic Equation Solver
+
+taken from https://github.com/shril/CubicEquationSolver
+
+
 * Used as a subsitute of np.roots() function which utilizes Eigen Value Matrix Method for finding roots of the polynomial.
 
   
@@ -24,15 +30,13 @@
   
 
 ### Sample Code
-
 ```python
+import CubicEquationSolver
 
-data_plot(1)
+CubicEquationSolver.solve(1, 0, 1, 0)
 ```
 ```
-
-Output: [ 0.+0.j 0.+1.j -0.-1.j]
-
+Output: [ 0.+0.j  0.+1.j -0.-1.j]
 ```
 
   
@@ -54,6 +58,7 @@ Output: [ 0.+0.j 0.+1.j -0.-1.j]
 ```python
 
 from theoretical import theoretical_analysis
+
 m_theo, frequencies_theo = theoretical_analysis(lambda_number=1, plot=False)
 print(m_theo[0], frequencies_theo[0][0])
 
@@ -66,13 +71,15 @@ Output: 1.83 3.1964911958061184
 ```
 
 # Data Collection
-* **data_plot(load_type)** will plot the data according to the load type (refer to theoretical section for the load type definitions). Graph will be frequency against mass
+* **data_plot(load_type)** will plot the data according to the load type (refer to theoretical section for the load type definitions). Graph will be frequency against mass.
+* 
 
 ### Sample Code
 
 ```python
 
 from theoretical import theoretical_analysis
+
 m_theo, frequencies_theo = theoretical_analysis(lambda_number=1, plot=False)
 print(m_theo[0], frequencies_theo[0][0])
 
