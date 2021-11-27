@@ -73,7 +73,7 @@ Output: 1.83 3.1964911958061184
 # Data Collection
 * **data_plot(load_type, on_one_graph=True)** will plot the data according to the load type (refer to theoretical section for the load type definitions). Graph will be frequency against mass.
 * To run the script, navigate to the bottom part of data_plotter.py and change the parameter.
-* To get all the data on a different graph for each mode in each load type, set on_one_graph to True.
+* To get all the data on a different graph for each mode in each load type, set on_one_graph to False.
 
 ### Sample Code
 
