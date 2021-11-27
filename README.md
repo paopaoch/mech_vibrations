@@ -72,7 +72,7 @@ Output: 1.83 3.1964911958061184
 
 # Data Collection
 * **data_plot(load_type)** will plot the data according to the load type (refer to theoretical section for the load type definitions). Graph will be frequency against mass.
-* 
+* To run the script, navigate to the bottom part of data_plotter.py and change the parameter.
 
 ### Sample Code
 
