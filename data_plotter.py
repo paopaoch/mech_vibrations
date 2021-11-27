@@ -53,4 +53,4 @@ def data_plot(load_type):
         plt.show()
 
 if __name__ == '__main__':
-    data_plot(1) # change the parameter 1,2,3,4 for each load type
+    data_plot(4) # change the parameter 1,2,3,4 for each load type
