@@ -1,5 +1,6 @@
 """This code was modified from https://www.youtube.com/watch?v=Kb7mdb5kOpA"""
 
+"""Update: This code is depreciated"""
 
 import numpy as np
 from math import sin, pi
