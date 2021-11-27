@@ -77,12 +77,7 @@ Output: 1.83 3.1964911958061184
 ### Sample Code
 
 ```python
-
-from theoretical import theoretical_analysis
-
-m_theo, frequencies_theo = theoretical_analysis(lambda_number=1, plot=False)
-print(m_theo[0], frequencies_theo[0][0])
-
+data_plot(1)
 ```
 Output: 
 3 graph outputs for each vibration modes
