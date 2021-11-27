@@ -44,11 +44,11 @@ def data_plot(load_type, on_one_graph=True):
         plt.xlabel('mass (kg)')
         plt.ylabel('Natural frequency (Hz)')
         plt.title('Natural frequency against mass, Load type {0}, Frequency mode {1}'.format(load_type, i+1))
-        plt.plot(m_sim, f_sim, 'r', label='Simulation type {0}'.format(i+1))
-        plt.plot(m_theo, f_theo, 'b', label='Theoretical {0}'.format(i+1))
-        plt.scatter(m_exp, f_exp, c='gold', label='Experimental points type {0}'.format(i+1))
+        plt.plot(m_sim, f_sim, label='Simulation mode {0}'.format(i+1))
+        plt.plot(m_theo, f_theo, label='Theoretical mode {0}'.format(i+1))
+        plt.scatter(m_exp, f_exp, label='Experimental points mode {0}'.format(i+1))
         m, b = polyfit(m_exp, f_exp, 1)
-        plt.plot(m_exp, m*m_exp + b, 'g', label='Experiment best fit line type {0}'.format(i+1))
+        plt.plot(m_exp, m*m_exp + b, label='Experiment best fit line mode {0}'.format(i+1))
         plt.tight_layout()
         plt.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
 
@@ -59,4 +59,4 @@ def data_plot(load_type, on_one_graph=True):
         plt.show()
 
 if __name__ == '__main__':
-    data_plot(1, on_one_graph=True) # change the parameter 1,2,3,4 for each load type
+    data_plot(2, on_one_graph=True) # change the parameter 1,2,3,4 for each load type
