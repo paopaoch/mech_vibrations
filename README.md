@@ -82,3 +82,11 @@ data_plot(1)
 ```
 Output: 
 3 graph outputs for each vibration modes
+
+* **compare_load_type(mode_type, plot_type=["theoretical"], range_load_type=[1,2,3,4])** will plot all the load types according to the mode of the natural frequencies specify.
+
+* mode_type refers to the mode of the natural frequency where mode_type=1 is mode 1, mode_type=2 is mode 2 etc.
+
+* plot_type will specify what data will be plotted eg. plot_type=["theoretical", "simulation", "experimental"] will plot out all the data while plot_type=["simulation"] will plot only the simulation.
+
+* range_load_type will specify the load types you want to plot eg range_load_type=[1,3,4] will plot load type 1,3 and 4 (cant go over 4 for obvious reasons).

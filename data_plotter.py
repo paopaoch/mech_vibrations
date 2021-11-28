@@ -60,7 +60,7 @@ def data_plot(load_type, on_one_graph=True):
         plt.title('Natural frequency against mass, Load type {0}'.format(load_type))
         plt.show()
 
-def compare_load_type(mode_type, plot_type=["theoretical"], range_load_type=range(1,4)):
+def compare_load_type(mode_type, plot_type=["theoretical"], range_load_type=[1,2,3,4]):
     """ Get Simulation Data """
     for load_type in range_load_type:
         df_sim = pd.read_csv("{0}\data\l{1}.csv".format(DIR_PATH, load_type))
@@ -91,7 +91,7 @@ def compare_load_type(mode_type, plot_type=["theoretical"], range_load_type=rang
             plt.plot(m_exp, m*m_exp + b, label='Experiment best fit line type {0}'.format(load_type))
 
         plt.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
-        
+
     plt.title('Natural frequency against mass, Frequency mode {0}'.format(mode_type))
     plt.xlabel('mass (kg)')
     plt.ylabel('Natural frequency (Hz)')
@@ -100,4 +100,4 @@ def compare_load_type(mode_type, plot_type=["theoretical"], range_load_type=rang
 
 if __name__ == '__main__':
     # data_plot(4, on_one_graph=True) # change the parameter 1,2,3,4 for each load type
-    compare_load_type(mode_type=3, plot_type=["theoretical", "simulation"], range_load_type=range(1,5))
+    compare_load_type(mode_type=3, plot_type=["theoretical", "simulation"], range_load_type=[1,2,3,4])
