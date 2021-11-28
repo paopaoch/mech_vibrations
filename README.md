@@ -72,14 +72,14 @@ Output: 1.83 3.1964911958061184
 
 # Data Collection
 * **data_plot(load_type, on_one_graph=True)** will plot the data according to the load type (refer to theoretical section for the load type definitions). Graph will be frequency against mass.
-* To run the script, navigate to the bottom part of data_plotter.py and change the parameter.
-* To get all the data on a different graph for each mode in each load type, set on_one_graph to False.
+	* To run the script, navigate to the bottom part of data_plotter.py and change the parameter.
+	* To get all the data on a different graph for each mode in each load type, set on_one_graph to False.
 
 
 * **compare_load_type(mode_type, plot_type=["theoretical"], range_load_type=[1,2,3,4])** will plot all the load types according to the mode of the natural frequencies specify.
 
-* mode_type refers to the mode of the natural frequency where mode_type=1 is mode 1, mode_type=2 is mode 2 etc.
+	* mode_type refers to the mode of the natural frequency where mode_type=1 is mode 1, mode_type=2 is mode 2 etc.
 
-* plot_type will specify what data will be plotted eg. plot_type=["theoretical", "simulation", "experimental"] will plot out all the data while plot_type=["simulation"] will plot only the simulation.
+	* plot_type will specify what data will be plotted eg. plot_type=["theoretical", "simulation", "experimental"] will plot out all the data while plot_type=["simulation"] will plot only the simulation.
 
-* range_load_type will specify the load types you want to plot eg range_load_type=[1,3,4] will plot load type 1,3 and 4 (cant go over 4 for obvious reasons).
+	* range_load_type will specify the load types you want to plot eg range_load_type=[1,3,4] will plot load type 1,3 and 4 (cant go over 4 for obvious reasons).
