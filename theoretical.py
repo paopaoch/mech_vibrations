@@ -81,7 +81,7 @@ def theoretical_analysis(lambda_number=1, plot=True):
     return mass, frequencies
 
 if __name__ == '__main__':
-    theoretical_analysis(lambda_number=1, plot=False)
+    print(len(theoretical_analysis(lambda_number=1, plot=False)[1]))
     # theoretical_analysis(lambda_number=2)
     # theoretical_analysis(lambda_number=3)
     # theoretical_analysis(lambda_number=4)
