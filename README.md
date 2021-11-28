@@ -75,13 +75,6 @@ Output: 1.83 3.1964911958061184
 * To run the script, navigate to the bottom part of data_plotter.py and change the parameter.
 * To get all the data on a different graph for each mode in each load type, set on_one_graph to False.
 
-### Sample Code
-
-```python
-data_plot(1)
-```
-Output: 
-3 graph outputs for each vibration modes
 
 * **compare_load_type(mode_type, plot_type=["theoretical"], range_load_type=[1,2,3,4])** will plot all the load types according to the mode of the natural frequencies specify.
 
