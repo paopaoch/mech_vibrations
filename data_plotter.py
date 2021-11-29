@@ -60,8 +60,10 @@ def data_plot(load_type, on_one_graph=True):
         plt.title('Natural frequency against mass, Load type {0}'.format(load_type))
         plt.show()
 
+PLT_COLORS = ['red', 'gold', 'lime', 'mediumblue']
 def compare_load_type(mode_type, plot_type=["theoretical"], range_load_type=[1,2,3,4]):
     """ Get Simulation Data """
+    color_index = 0
     for load_type in range_load_type:
         df_sim = pd.read_csv("{0}\data\l{1}.csv".format(DIR_PATH, load_type))
         df_sim["m"] = M * df_sim["l{0}".format(load_type)]
@@ -82,15 +84,16 @@ def compare_load_type(mode_type, plot_type=["theoretical"], range_load_type=[1,2
         w1_exp = df_exp['w{0}'.format(mode_type)].to_numpy()
 
         if "simulation" in plot_type:
-            plt.plot(m_sim, w1_sim, label='Simulation type {0}'.format(load_type))
+            plt.plot(m_sim, w1_sim, color=PLT_COLORS[color_index], linestyle=':', label='Simulation type {0}'.format(load_type))
         if "theoretical" in plot_type:
-            plt.plot(m_theo, w1_theo, label='Theoretical type {0}'.format(load_type))
+            plt.plot(m_theo, w1_theo, color=PLT_COLORS[color_index], linestyle='-.', label='Theoretical type {0}'.format(load_type))
         if "experimental" in plot_type:
-            plt.scatter(m_exp, w1_exp, label='Experimental points type {0}'.format(load_type))
-            m, b = polyfit(m_exp, w1_exp, 1)
-            plt.plot(m_exp, m*m_exp + b, label='Experiment best fit line type {0}'.format(load_type))
+            plt.scatter(m_exp, w1_exp, color=PLT_COLORS[color_index], label='Experimental points tyzpe {0}'.format(load_type))
+            # m, b = polyfit(m_exp, w1_exp, 1)
+            # plt.plot(m_exp, m*m_exp + b, color=PLT_COLORS[color_index],  linestyle='--', label='Experiment best fit line type {0}'.format(load_type))
 
         plt.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
+        color_index += 1
 
     plt.title('Natural frequency against mass, Frequency mode {0}'.format(mode_type))
     plt.xlabel('mass (kg)')
@@ -100,4 +103,4 @@ def compare_load_type(mode_type, plot_type=["theoretical"], range_load_type=[1,2
 
 if __name__ == '__main__':
     # data_plot(4, on_one_graph=True) # change the parameter 1,2,3,4 for each load type
-    compare_load_type(mode_type=3, plot_type=["theoretical", "simulation"], range_load_type=[1,2,3,4])
+    compare_load_type(mode_type=3, plot_type=["theoretical", "simulation", "experimental"], range_load_type=[1,2,3,4])
