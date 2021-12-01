@@ -90,7 +90,7 @@ def main_plot(delta_m1=0, delta_m2=0, delta_m3=0, angular=True, sweep=True, ang_
     # print(time_step)
     time = [round(t,5) for t in np.arange(0, end_time, time_step)]
     if sweep == True:
-        omega = sine_sweep(0, 100)
+        omega = sine_sweep(0, 30*2*pi)
     else:
         omega = sine(ang_frequency)
 
